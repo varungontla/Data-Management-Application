@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+    {% block title %}
+        HomePage
+    {% endblock title %}
+
+        {% block content %}
+        <h1>Your Uploads...</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>FileName</th>
+                <th>File</th>
+                <th></th>
+                <th>Share</th>
+            </tr>
+            </thead>
+            <tbody>
+                {%for item in items%}
+                    <tr>
+                        <td>{{item.Filename}}</td>
+                        <td>{{item.File}}</td>
+                        <td>
+                            <a href="{{item.File.url}}" class="btn btn-primary btn-sm">
+                                view file
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/DeskShare/share?Sharing_File={{item.File.content_type|urlencode}}" class="btn btn-primary btn-sm">
+                                Share
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                {% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Share
+    {% endblock title %}
+
+        {% block content %}
+            <h1> email files here..</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary">Send email</button>
+            </form>
+        {% endblock content %}

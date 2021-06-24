@@ -1,0 +1,23 @@
+{% extends 'DeskShare.html' %}
+    {% block title %}
+        Uploads list
+    {% endblock title %}
+
+        {% block content %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>FileName</th>
+                <th>Download</th>
+            </tr>
+            </thead>
+            <tbody>
+                {%for item in items%}
+                    <tr>
+                        <td>{{item.Filename}}</td>
+                        <td>{{item.File}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endblock content %}
